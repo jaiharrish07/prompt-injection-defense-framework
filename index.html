@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptGuard - Anti-Prompt Injection Defense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PromptGuard</h1>
+            <p>Anti-Prompt Injection Defense Framework</p>
+        </header>
+        
+        <main>
+            <section class="input-section">
+                <h2>Inspect Prompt (Security Scan)</h2>
+                
+                <form id="analysis-form">
+                    <textarea 
+                        id="prompt-input" 
+                        placeholder="Enter the prompt you want to analyze for potential injection attacks..."
+                        rows="6"
+                    ></textarea>
+                    <div class="button-group">
+                        <button type="submit" id="analyze-btn">Run Security Scan</button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="compare-section" id="compare-section" style="display: none;">
+                <h2>Hybrid Framework Analysis</h2>
+                <div class="compare-grid">
+                    <div class="compare-card direct">
+                        <h3>Without Framework (Direct Response)</h3>
+                        <div id="direct-response-content" class="response-box"></div>
+                    </div>
+                    <div class="compare-card framework">
+                        <h3>Protected by PromptGuard™</h3>
+                        <div id="framework-response-content" class="response-box"></div>
+                        <div id="framework-analysis-details" class="analysis-box"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>PromptGuard - Protecting LLMs from Prompt Injection Attacks</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
